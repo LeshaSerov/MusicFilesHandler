@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public final class MusicFileIdentifier {
 
   public static MusicFile determineType(String nameFile) {
-    List<MusicFile> list = List.of(new Action(), new Song(), new Speech(), new Prophecy(), new Common());
+    List<MusicFile> list = List.of(new Verse(), new Song(), new Common());
     Optional<MusicFile> optionalMusicFile = list.stream()
         .filter(x -> Pattern.matches(x.getRegex(), nameFile))
         .findFirst();
